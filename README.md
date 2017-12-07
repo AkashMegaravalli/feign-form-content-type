@@ -1,5 +1,5 @@
 # feign-form-content-type
-This is created from feign-form code base,Has a fix where user impl can mention what time of multi-part content is it going to be
+This is created from feign-form code base,gives flexibility to provide content types for each attachements individually
 
 ## How to define each multipart content type
 
@@ -11,11 +11,11 @@ This is created from feign-form code base,Has a fix where user impl can mention 
     "Accept: */*",
     "X-Auth-Username: {xAuthUsername}"
   })
-  Long createPostExample(@Param("xAuthUsername") String xAuthUsername, @Param("category;application/json") Object dao, @Param("img") File img);
+  Long createPostExample(@Param("xAuthUsername") String xAuthUsername, @Param("category;application/json") Object dao, @Param("img;image/jpeg") Object img);
 
 ```
 
-  As you can see `@Param("category;application/json") Object category` , Has `semicolon(;)` seperated value which is `"{name};{content-type}"`
+  `@Param("category;application/json") Object category` Has `semicolon(;)` seperated value which is `"{name};{content-type}"`
 
 # Below are from feign-form
 # Form Encoder

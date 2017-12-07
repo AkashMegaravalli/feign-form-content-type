@@ -44,7 +44,7 @@ public class ParameterWriter extends AbstractWriter {
     String[] keysArr = key.split(";");
     String keyVal = keysArr[0];
     String contentType=CONTENT_TYPE+"text/plain; charset=UTF-8";
-    if(keysArr[1] != null){
+    if(keysArr.length > 1 && keysArr[1] != null){
       contentType=CONTENT_TYPE+keysArr[1];
     }
     val string = new StringBuilder()
